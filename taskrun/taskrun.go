@@ -10,7 +10,7 @@ type task struct {
 	Name        string
 	Index       int
 	ChanIn      chan int
-	List        *WorkerList
+	List        *TaskList
 	FnWork      func()
 	WaitSeconds int
 }
@@ -41,7 +41,7 @@ type TaskList struct {
 func NewTaskList() *TaskList {
 	return &TaskList{
 		Chan:  make(chan int, 10),
-		Works: make(map[int]*Worker),
+		Works: make(map[int]*task),
 	}
 }
 func (l *TaskList) AddTask(name string, waitSeconds int, fn func()) {
