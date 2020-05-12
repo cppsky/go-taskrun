@@ -2,8 +2,9 @@ package main
 
 import (
 	"context"
-	"taskrun"
 	"time"
+
+	"cppsky.cn/git/cppsky/go-taskrun/taskrun"
 
 	"github.com/cppsky/go-logger/logger"
 )
