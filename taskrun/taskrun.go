@@ -62,7 +62,7 @@ func (l *TaskList) AddTask(name string, waitSeconds int, fn func()) {
 }
 func (l *TaskList) Start(ctx context.Context) {
 	go func() {
-		waitStart := make(map[int]*Worker)
+		waitStart := make(map[int]*task)
 
 		for k, v := range l.Works {
 			waitStart[k] = v
